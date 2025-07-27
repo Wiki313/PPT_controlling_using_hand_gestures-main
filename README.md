@@ -61,10 +61,4 @@ pip install opencv-python mediapipe pyautogui
 
 **Author:** Waqar Afridi
 
-```
-
----
-
-Would you like me to **generate this `README.md` file** and give you a **ready-to-download version**?
-```
 
