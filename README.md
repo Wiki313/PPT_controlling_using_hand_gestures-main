@@ -1,64 +1,73 @@
-Here’s a **`README.md`** file for PPT_controlling_using_hand_gestures-main
-
----
-
-```markdown
 # PPT Control Using Hand Gestures 🎯
 
-This project allows you to control **PowerPoint presentations** using **hand gestures** with the help of **OpenCV** and **MediaPipe**.  
-You can move to the **next** or **previous** slide by showing specific hand gestures to the webcam.
+Control PowerPoint presentations hands-free using real-time hand gesture recognition with OpenCV and MediaPipe.
 
-## 🚀 Features
-- Hands-free PowerPoint slide control.
-- Recognizes **left and right-hand gestures** for navigation.
-- Uses **MediaPipe Hands** for gesture detection.
-- Works with any presentation software (PowerPoint, PDF Viewer, etc.) using `pyautogui`.
+Show an open palm to the webcam and hold it for 2 seconds to move between slides — no clicker or keyboard needed.
 
-## 📂 Project Structure
-```
+## Gestures
 
-robot\_controlling\_using\_hand\_gestures-main/
-│
-├── project.py   # Main script for gesture detection & slide control
-└── README.md    # Project documentation
+| Gesture | Action | Key Pressed |
+|---------|--------|-------------|
+| Right-hand open palm, held 2 seconds | Next slide | Right arrow |
+| Left-hand open palm, held 2 seconds | Previous slide | Left arrow |
 
-````
+Press `Esc` to exit.
 
-## 🛠️ Requirements
-Install the following Python libraries:
+## Features
+
+- Hands-free PowerPoint slide control
+- Left- and right-hand gesture recognition
+- Real-time hand landmark detection with MediaPipe Hands
+- Works with PowerPoint via keyboard simulation with PyAutoGUI
+- Live camera preview with hand landmarks
+
+## Requirements
+
+- Python 3.8+
+- Webcam
+- A PowerPoint file to present
+
+Install dependencies:
+
 ```bash
 pip install opencv-python mediapipe pyautogui
-````
+```
 
-## ▶️ How to Run
+## How to Run
 
-1. Place your PowerPoint file in the project directory.
-2. Run the script with your file name:
+```bash
+python project.py your_presentation.pptx
+```
 
-   ```bash
-   python project.py your_presentation.pptx
-   ```
-3. Use your **right hand** to move to the **next slide** and your **left hand** to move to the **previous slide**.
+1. Place your PowerPoint file in the project directory, or pass its path as the argument.
+2. The script opens the file and starts the webcam.
+3. Hold your right-hand open palm for 2 seconds for the next slide, left-hand open palm for 2 seconds for the previous slide.
+4. Press `Esc` to quit.
 
-## 🧠 How It Works
+A sample file `ab.ppt` is included in this repo for testing.
 
-* **MediaPipe Hands** detects your hand landmarks in real-time.
-* If an open palm is detected and held for **2 seconds**, a gesture command is triggered.
-* **PyAutoGUI** simulates keyboard arrow key presses to control slides.
+## Project Structure
 
-## 🔧 Future Improvements
+```text
+.
+├── project.py   # Main script: gesture detection and slide control
+├── ab.ppt       # Sample presentation for testing
+└── README.md    # Project documentation
+```
 
-* Add custom gesture mapping for more actions (start/stop slideshow).
-* Support multiple gesture-based commands.
-* Extend functionality for hardware integration.
+## How It Works
 
-## ✨ Demo
+1. OpenCV captures frames from the webcam.
+2. MediaPipe Hands detects hand landmarks in real time.
+3. If an open palm is detected and held for 2 seconds, a gesture command is triggered.
+4. PyAutoGUI simulates a right or left arrow key press to change slides.
 
-* **Right Hand** ➡ Next Slide
-* **Left Hand** ⬅ Previous Slide
+## Future Improvements
 
----
+- Custom gesture mapping for more actions (start/stop slideshow, jump to first/last slide)
+- Support for PDF viewers and other presentation software
+- On-screen gesture confidence indicator
 
-**Author:** Waqar Afridi
+## Author
 
-
+Muhammad Waqar — [LinkedIn](https://www.linkedin.com/in/mwaqar-ai/)
